@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct OnboardingView: View {
+	// MARK: - Property
+	@AppStorage("onboarding") var isOnboardingViewActive: Bool = true
+
+	// MARK: - Body
     var body: some View {
 		 VStack(spacing: 20){
-			 Text("Onboarding")
+			 Text("OnBoarding")
 				 .font(.largeTitle)
 			 
 			 Button {
-				 // some action
-				 print("Estreia do Ano")
+				 isOnboardingViewActive = false
 			 } label: {
-				 Text("Start")
+				 Text("Iniciar")
 			 }
 		 }
     }
