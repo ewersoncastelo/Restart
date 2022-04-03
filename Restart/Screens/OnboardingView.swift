@@ -56,11 +56,22 @@ struct OnboardingView: View {
 				Spacer()
 				
 				// MARK: - Footer
-				Button {
-					isOnboardingViewActive = false
-				} label: {
-					Text("Iniciar")
+				ZStack{
+					 Capsule()
+						.fill(Color.white.opacity(0.2))
+					
+					Capsule()
+						.fill(Color.white.opacity(0.2))
+						.padding(8)
 				}
+				.frame(height: 80, alignment: .center)
+				.padding()
+				
+//				Button {
+//					isOnboardingViewActive = false
+//				} label: {
+//					Text("Iniciar")
+//				}
 			}
 		}
 	}
