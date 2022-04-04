@@ -22,7 +22,7 @@ struct HomeView: View {
 				.padding()
 			
 			// MARK: - CENTER
-			Text("O tempo que leva à perfeição depende da intensidade do nosso foco.")
+			Text("O tempo que leva à maestria depende da intensidade do nosso foco.")
 				.font(.title3)
 				.fontWeight(.light)
 				.foregroundColor(.secondary)

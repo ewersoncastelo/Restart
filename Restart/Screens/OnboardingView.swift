@@ -29,7 +29,7 @@ struct OnboardingView: View {
 					
 					Text("""
 não é sobre o quanto doamos,
-mas quanto amor colocamos ao doar
+mas quanto amor temos ao doar
 """)
 					.font(.title3)
 					.fontWeight(.light)
