@@ -8,26 +8,50 @@
 import SwiftUI
 
 struct HomeView: View {
-	// MARK: - Property
+	// MARK: - PROPERTY
 	@AppStorage("onboarding") var isOnboardingViewActive: Bool = false
 	
-	// MARK: - Body
-    var body: some View {
-		 VStack(spacing: 20) {
-			 Text("Home")
-				 .font(.largeTitle)
-			 
-			 Button {
-				 isOnboardingViewActive = true
-			 } label: {
-				 Text("Reiniciar")
-			 }
-		 }
-    }
+	var body: some View {
+		VStack{
+			// MARK: - HEADER
+			Spacer()
+			
+			Image("character-2")
+				.resizable()
+				.scaledToFit()
+				.padding()
+			
+			// MARK: - CENTER
+			Text("O tempo que leva à perfeição depende da intensidade do nosso foco.")
+				.font(.title3)
+				.fontWeight(.light)
+				.foregroundColor(.secondary)
+				.multilineTextAlignment(.center)
+				.padding()
+			
+			// MARK: - FOOTER
+			Spacer()
+			
+			Button {
+				isOnboardingViewActive = true
+			} label: {
+				Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+					.imageScale(.large)
+				
+				Text("Reinciar")
+					.font(.system(.title3, design: .rounded))
+					.fontWeight(.bold
+					)
+			}
+			.buttonStyle(.borderedProminent)
+			.buttonBorderShape(.capsule)
+			.controlSize(.large)
+		}
+	}
 }
 
 struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+	static var previews: some View {
+		HomeView()
+	}
 }
