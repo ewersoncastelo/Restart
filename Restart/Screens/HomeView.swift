@@ -16,10 +16,14 @@ struct HomeView: View {
 			// MARK: - HEADER
 			Spacer()
 			
-			Image("character-2")
-				.resizable()
-				.scaledToFit()
-				.padding()
+			ZStack {
+				CircleGroupView(ShapeColor: .black, ShapeOpacity: 0.1)
+				
+				Image("character-2")
+					.resizable()
+					.scaledToFit()
+					.padding()
+			}
 			
 			// MARK: - CENTER
 			Text("O tempo que leva à maestria depende da intensidade do nosso foco.")

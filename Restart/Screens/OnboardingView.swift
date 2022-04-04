@@ -40,7 +40,7 @@ mas quanto amor temos ao doar
 				
 				// MARK: - Center
 				ZStack{
-					// Circle Groups
+					CircleGroupView(ShapeColor: .white, ShapeOpacity: 0.2)
 					
 					Image("character-1")
 						.resizable()
