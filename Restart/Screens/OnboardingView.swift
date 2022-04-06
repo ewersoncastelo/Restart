@@ -11,6 +11,9 @@ struct OnboardingView: View {
 	// MARK: - Property
 	@AppStorage("onboarding") var isOnboardingViewActive: Bool = true
 	
+	@State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
+	@State private var buttonOffset: CGFloat = 0
+	
 	// MARK: - Body
 	var body: some View {
 		ZStack {
