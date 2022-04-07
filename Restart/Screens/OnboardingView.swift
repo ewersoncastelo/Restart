@@ -87,14 +87,20 @@ mas quanto amor temos ao doar
 						}
 						.foregroundColor(.white)
 						.frame(width: 80, height: 80, alignment: .center)
-						.onTapGesture {
-							isOnboardingViewActive = false
-						}
+						.offset(x: buttonOffset)
+						.gesture(
+							DragGesture()
+								.onChanged({ gesture in
+									if gesture.translation.width > 0 {
+										buttonOffset = gesture.translation.width
+									}
+								})
+						)
 						
 						Spacer()
 					}
 				}
-				.frame(height: 80, alignment: .center)
+				.frame(width: buttonWidth, height: 80, alignment: .center)
 				.padding()
 			}
 		}
