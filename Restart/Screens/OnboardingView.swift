@@ -103,12 +103,14 @@ mas quanto amor temos ao doar
 									}
 								}
 								.onEnded{ _ in
-									if buttonOffset > buttonWidth / 2 {
-										buttonOffset = buttonWidth - 80
-										isOnboardingViewActive = false
+									withAnimation(Animation.easeOut(duration: 0.4)) {
+										if buttonOffset > buttonWidth / 2 {
+											buttonOffset = buttonWidth - 80
+											isOnboardingViewActive = false
+										}
+										
+										buttonOffset = 0
 									}
-									
-									buttonOffset = 0
 								}
 						)
 						
