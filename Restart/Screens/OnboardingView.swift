@@ -23,9 +23,9 @@ struct OnboardingView: View {
 				.ignoresSafeArea(.all, edges: .all)
 			
 			VStack(spacing: 20){
-				// MARK: - Header
 				Spacer()
 				
+				// MARK: - Header
 				VStack(spacing: 0){
 					Text("Compartilhar.")
 						.font(.system(size: 60))
@@ -42,6 +42,9 @@ mas quanto amor temos ao doar
 					.multilineTextAlignment(.center)
 					.padding(.horizontal, 10)
 				}
+				.opacity(isAnimating ? 1 : 0)
+				.offset(y: isAnimating ? 0 : -40)
+				.animation(.easeOut(duration: 1), value: isAnimating)
 				
 				// MARK: - Center
 				ZStack{
