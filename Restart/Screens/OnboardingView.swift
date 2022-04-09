@@ -70,7 +70,7 @@ mas quanto amor temos ao doar
 					HStack{
 						Capsule()
 							.fill(Color("ColorRed"))
-							.frame(width: 80)
+							.frame(width: buttonOffset + 80)
 						
 						Spacer()
 					}
@@ -90,11 +90,19 @@ mas quanto amor temos ao doar
 						.offset(x: buttonOffset)
 						.gesture(
 							DragGesture()
-								.onChanged({ gesture in
+								.onChanged{ gesture in
 									if gesture.translation.width > 0 && buttonOffset <= buttonWidth - 80 {
 										buttonOffset = gesture.translation.width
 									}
-								})
+								}
+								.onEnded{ _ in
+									if buttonOffset > buttonWidth / 2 {
+										buttonOffset = buttonWidth - 80
+										isOnboardingViewActive = false
+									}
+									
+									buttonOffset = 0
+								}
 						)
 						
 						Spacer()
@@ -107,6 +115,7 @@ mas quanto amor temos ao doar
 	}
 }
 
+// MARK: - PREVIEWS
 struct OnboardingView_Previews: PreviewProvider {
 	static var previews: some View {
 		OnboardingView()
