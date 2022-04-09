@@ -14,6 +14,8 @@ struct OnboardingView: View {
 	@State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
 	@State private var buttonOffset: CGFloat = 0
 	
+	@State private var isAnimating: Bool = false
+	
 	// MARK: - Body
 	var body: some View {
 		ZStack {
@@ -111,6 +113,9 @@ mas quanto amor temos ao doar
 				.frame(width: buttonWidth, height: 80, alignment: .center)
 				.padding()
 			}
+		}
+		.onAppear {
+			isAnimating = true
 		}
 	}
 }
