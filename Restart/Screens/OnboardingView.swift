@@ -53,6 +53,8 @@ mas quanto amor temos ao doar
 					Image("character-1")
 						.resizable()
 						.scaledToFit()
+						.opacity(isAnimating ? 1 : 0)
+						.animation(.easeOut(duration: 0.4), value: isAnimating)
 				}
 				
 				Spacer()
