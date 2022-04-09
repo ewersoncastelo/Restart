@@ -117,6 +117,9 @@ mas quanto amor temos ao doar
 				}
 				.frame(width: buttonWidth, height: 80, alignment: .center)
 				.padding()
+				.opacity(isAnimating ? 1 : 0)
+				.offset(y: isAnimating ? 0 : 40)
+				.animation(.easeOut(duration: 1), value: isAnimating)
 			}
 		}
 		.onAppear {
