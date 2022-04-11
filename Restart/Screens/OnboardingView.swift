@@ -69,6 +69,7 @@ mas quanto amor temos ao doar
 									imageOffset = .zero
 								}
 						)
+						.animation(.easeOut(duration: 1), value: imageOffset)
 				}
 				
 				Spacer()
