@@ -16,6 +16,8 @@ struct OnboardingView: View {
 	
 	@State private var isAnimating: Bool = false
 	
+	@State private var imageOffset: CGSize = .zero //CGSize(width: 0, height: 0)
+	
 	// MARK: - Body
 	var body: some View {
 		ZStack {
@@ -55,6 +57,18 @@ mas quanto amor temos ao doar
 						.scaledToFit()
 						.opacity(isAnimating ? 1 : 0)
 						.animation(.easeOut(duration: 0.4), value: isAnimating)
+						.offset(x: imageOffset.width, y: 0)
+						.gesture(
+							DragGesture()
+								.onChanged{ gesture in
+									if abs(imageOffset.width) <= 150 {
+										imageOffset = gesture.translation
+									}
+								}
+								.onEnded{ _ in
+									imageOffset = .zero
+								}
+						)
 				}
 				
 				Spacer()
