@@ -13,10 +13,10 @@ struct OnboardingView: View {
 	
 	@State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
 	@State private var buttonOffset: CGFloat = 0
+	@State private var imageOffset: CGSize = .zero //CGSize(width: 0, height: 0)
+	@State private var indicatorOpacity: Double = 1.0
 	
 	@State private var isAnimating: Bool = false
-	
-	@State private var imageOffset: CGSize = .zero //CGSize(width: 0, height: 0)
 	
 	// MARK: - Body
 	var body: some View {
@@ -67,14 +67,32 @@ mas quanto amor temos ao doar
 								.onChanged{ gesture in
 									if abs(imageOffset.width) <= 150 {
 										imageOffset = gesture.translation
+										
+										withAnimation (.linear(duration: 0.25)){
+											indicatorOpacity = 0
+										}
 									}
 								}
 								.onEnded{ _ in
 									imageOffset = .zero
+
+									withAnimation (.linear(duration: 0.25)){
+										indicatorOpacity = 1
+									}
 								}
 						)
 						.animation(.easeOut(duration: 1), value: imageOffset)
 				}
+				.overlay(
+					Image(systemName: "arrow.left.and.right.circle")
+						.font(.system(size: 44, weight: .ultraLight))
+						.foregroundColor(.white)
+						.offset(y: 20)
+						.opacity(isAnimating ? 1 : 0)
+						.animation(.easeOut(duration: 1).delay(2), value: isAnimating)
+						.opacity(indicatorOpacity)
+					, alignment: .bottom
+				)
 				
 				Spacer()
 				
