@@ -16,6 +16,8 @@ struct OnboardingView: View {
 	@State private var imageOffset: CGSize = .zero //CGSize(width: 0, height: 0)
 	@State private var indicatorOpacity: Double = 1.0
 	
+	@State private var textTitle: String = "Compartilhar."
+	
 	@State private var isAnimating: Bool = false
 	
 	// MARK: - Body
@@ -29,10 +31,12 @@ struct OnboardingView: View {
 				
 				// MARK: - Header
 				VStack(spacing: 0){
-					Text("Compartilhar.")
+					Text(textTitle)
 						.font(.system(size: 60))
 						.fontWeight(.heavy)
 						.foregroundColor(.white)
+						.transition(.opacity)
+						.id(textTitle)
 					
 					Text("""
 não é sobre o quanto doamos,
@@ -70,6 +74,7 @@ mas quanto amor temos ao doar
 										
 										withAnimation (.linear(duration: 0.25)){
 											indicatorOpacity = 0
+											textTitle = "Doar."
 										}
 									}
 								}
@@ -78,6 +83,7 @@ mas quanto amor temos ao doar
 
 									withAnimation (.linear(duration: 0.25)){
 										indicatorOpacity = 1
+										textTitle = "Compartilhar."
 									}
 								}
 						)
