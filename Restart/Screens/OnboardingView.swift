@@ -20,6 +20,8 @@ struct OnboardingView: View {
 	
 	@State private var isAnimating: Bool = false
 	
+	let hapticFeedback = UINotificationFeedbackGenerator()
+	
 	// MARK: - Body
 	var body: some View {
 		ZStack {
@@ -148,11 +150,13 @@ mas quanto amor temos ao doar
 								.onEnded{ _ in
 									withAnimation(Animation.easeOut(duration: 0.4)) {
 										if buttonOffset > buttonWidth / 2 {
+											hapticFeedback.notificationOccurred(.success)
 											playSound(sound: "chimeup", type: "mp3")
 											buttonOffset = buttonWidth - 80
 											isOnboardingViewActive = false
 										}
 										
+										hapticFeedback.notificationOccurred(.warning)
 										buttonOffset = 0
 									}
 								}
