@@ -14,6 +14,7 @@
 		20729ADA27F4083C009BE1E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20729AD927F4083C009BE1E7 /* Preview Assets.xcassets */; };
 		20729AE327F40C5E009BE1E7 /* success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 20729AE127F40C5E009BE1E7 /* success.m4a */; };
 		20729AE427F40C5E009BE1E7 /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20729AE227F40C5E009BE1E7 /* chimeup.mp3 */; };
+		20B1AA9F2807BF41009C45D9 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1AA9E2807BF41009C45D9 /* AudioPlayer.swift */; };
 		20DC3CCC27F52E2100B89B55 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC3CCB27F52E2100B89B55 /* OnboardingView.swift */; };
 		20DC3CCE27F52E2C00B89B55 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC3CCD27F52E2C00B89B55 /* HomeView.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		20729AE227F40C5E009BE1E7 /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chimeup.mp3; sourceTree = "<group>"; };
 		20729AE827F4182A009BE1E7 /* Restart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Restart.entitlements; sourceTree = "<group>"; };
 		20729AE927F428AB009BE1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		20B1AA9E2807BF41009C45D9 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		20DC3CCB27F52E2100B89B55 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		20DC3CCD27F52E2C00B89B55 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				20729AE027F40C46009BE1E7 /* Sounds */,
+				20B1AA9E2807BF41009C45D9 /* AudioPlayer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				20DC3CCE27F52E2C00B89B55 /* HomeView.swift in Sources */,
 				20729AD527F40839009BE1E7 /* ContentView.swift in Sources */,
 				20729AD327F40839009BE1E7 /* RestartApp.swift in Sources */,
+				20B1AA9F2807BF41009C45D9 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
