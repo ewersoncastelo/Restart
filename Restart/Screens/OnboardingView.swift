@@ -170,6 +170,7 @@ mas quanto amor temos ao doar
 		.onAppear {
 			isAnimating = true
 		}
+		.preferredColorScheme(.dark)
 	}
 }
 
